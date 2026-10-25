@@ -14,8 +14,8 @@ A segmented Cybersecurity Home Lab built on VirtualBox and pfSense/OPNsense, fea
 - Security VMs (DFIR & SIEM)
 - Cyber Range (Vulnerable VMs for CTF practice)
 <img width="1774" height="887" alt="Cybersecurity Home Lab Network Diagram" src="https://github.com/user-attachments/assets/9a4fb913-9b90-497c-963e-f2811213f408" />
+--- 
 
----  
 # 1. Installing VirtualBox
 
 Go to the following URL: [Downloads — Oracle VM VirtualBox](https://www.virtualbox.org/wiki/Downloads)
@@ -26,10 +26,11 @@ As of the writing of this module, the latest version of VirtualBox is `7.2.22`.
 <img width="440" height="196" alt="2" src="https://github.com/user-attachments/assets/2b9555fd-accf-4add-8af8-729e23704aca" />  
 ---
 
-
 # 2. pfSense Network Interface Configuration
 
-## Overview
+## Overview  
+
+Go to the following link: [pfSense CE Download](https://atxfiles.netgate.com/mirror/downloads/)
 
 This project uses **pfSense 2.7.2-RELEASE** as the central firewall and router for a virtualized cybersecurity home lab running in VirtualBox.
 
@@ -118,6 +119,9 @@ Key design goals:
 
 The six interfaces and their IPv4 addresses are configured and visible in the pfSense console. DHCP scopes, firewall policies, client connectivity, and inter-network access should be configured and tested separately.  
 <img width="1275" height="743" alt="1" src="https://github.com/user-attachments/assets/422ac6ef-a3a5-44c4-94a5-7b481e1da0e6" />
+---  
+
+
 
 
 
