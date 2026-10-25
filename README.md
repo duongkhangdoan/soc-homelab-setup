@@ -1,13 +1,5 @@
 # Soc-Homelab-Setup
 A segmented Cybersecurity Home Lab built on VirtualBox and pfSense/OPNsense, featuring dedicated subnets for Active Directory, SOC monitoring (Splunk), malware analysis (Flare VM &amp; REMnux), forensics (Tsurugi), and vulnerable attack targets.
+2. Căn giữa ảnh + Chỉnh kích thước (Giúp bài write-up nhìn rất đẹp):
+1. Chỉnh chiều rộng (Width) theo pixel hoặc phần trăm:
 
-
-
-
------------------------------------------------------------------------------------
-xxvxvx
-sdfsdfsd
-sdfsdfsd
-sdfsdfsdfsd
-sdfsdfsd
-<img width="300" height="300" alt="1790022361633" src="https://github.com/user-attachments/assets/fbb2a9c2-3a8d-487c-88a0-cefebd8dd528" />
