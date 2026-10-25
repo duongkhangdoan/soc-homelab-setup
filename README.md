@@ -15,7 +15,7 @@ A segmented Cybersecurity Home Lab built on VirtualBox and pfSense/OPNsense, fea
 <img width="1774" height="887" alt="Cybersecurity Home Lab Network Diagram" src="https://github.com/user-attachments/assets/9a4fb913-9b90-497c-963e-f2811213f408" />
 
 ---  
-# <span style="color: red;">1. Installing VirtualBox
+# 1. Installing VirtualBox
 
 Go to the following URL: [Downloads — Oracle VM VirtualBox](https://www.virtualbox.org/wiki/Downloads)
 
@@ -26,7 +26,7 @@ As of the writing of this module, the latest version of VirtualBox is `7.2.22`.
 ---
 
 
-# pfSense Network Interface Configuration
+# 2. pfSense Network Interface Configuration
 
 ## Overview
 
@@ -47,7 +47,7 @@ The pfSense virtual machine has six network interfaces: one WAN interface and fi
 
 ## Interface Descriptions
 
-### 1. WAN — External Network
+### a. WAN — External Network
 
 - **Interface:** `vtnet0`
 - **IP address:** `10.0.2.15/24`
@@ -55,35 +55,35 @@ The pfSense virtual machine has six network interfaces: one WAN interface and fi
 
 The WAN interface connects pfSense to the external network through VirtualBox NAT. It provides a path for outbound connectivity, subject to the WAN configuration, firewall rules, and upstream network settings.
 
-### 2. LAN — Primary Network
+### b. LAN — Primary Network
 
 - **Interface:** `vtnet1`
 - **IP address:** `10.0.0.1/24`
 
 The LAN interface serves as the primary internal network and can provide access to the pfSense web management interface. It can also host administrative or general-purpose lab systems.
 
-### 3. CYBER_RANGE — Cybersecurity Testing
+### c. CYBER_RANGE — Cybersecurity Testing
 
 - **Interface:** `vtnet2`
 - **IP address:** `10.6.6.1/24`
 
 This network is intended for cybersecurity exercises, controlled testing, and simulated attack-and-defense scenarios. Firewall policies can restrict access to other lab networks.
 
-### 4. AD_LAB — Active Directory Environment
+### d. AD_LAB — Active Directory Environment
 
 - **Interface:** `vtnet3`
 - **IP address:** `10.80.80.1/24`
 
 This network is intended to host a Windows Server domain controller and Windows client machines for practicing domain administration, authentication, Group Policy, and security event monitoring.
 
-### 5. ISOLATED — Isolated Testing Environment
+### e. ISOLATED — Isolated Testing Environment
 
 - **Interface:** `vtnet4`
 - **IP address:** `10.99.99.1/24`
 
 This network is intended for systems that require additional network isolation. Firewall rules should restrict communication with other lab segments according to testing requirements.
 
-### 6. SECURITY — Security Monitoring
+### f. SECURITY — Security Monitoring
 
 - **Interface:** `vtnet5`
 - **IP address:** `10.10.10.1/24`
@@ -106,7 +106,11 @@ Key design goals:
 
 ## Current Status
 
-The six interfaces and their IPv4 addresses are configured and visible in the pfSense console. DHCP scopes, firewall policies, client connectivity, and inter-network access should be configured and tested separately.
+The six interfaces and their IPv4 addresses are configured and visible in the pfSense console. DHCP scopes, firewall policies, client connectivity, and inter-network access should be configured and tested separately.  
+<img width="1275" height="743" alt="1" src="https://github.com/user-attachments/assets/422ac6ef-a3a5-44c4-94a5-7b481e1da0e6" />
+
+
+
 
  
 
