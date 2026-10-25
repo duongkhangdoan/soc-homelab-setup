@@ -15,7 +15,7 @@ A segmented Cybersecurity Home Lab built on VirtualBox and pfSense/OPNsense, fea
 <img width="1774" height="887" alt="Cybersecurity Home Lab Network Diagram" src="https://github.com/user-attachments/assets/9a4fb913-9b90-497c-963e-f2811213f408" />
 
 ---  
-###1. Installing VirtualBox
+## <span style="color: red;">1. Installing VirtualBox
 
 Go to the following URL: [Downloads — Oracle VM VirtualBox](https://www.virtualbox.org/wiki/Downloads)
 
