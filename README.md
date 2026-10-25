@@ -12,4 +12,5 @@ A segmented Cybersecurity Home Lab built on VirtualBox and pfSense/OPNsense, fea
 - Malware Analysis Lab (Windows & Linux)
 - Security VMs (DFIR & SIEM)
 - Cyber Range (Vulnerable VMs for CTF practice)
-<img width="400" height="400" alt="1790022361633" src="https://github.com/user-attachments/assets/8994d186-20ac-46e1-875f-cda9932b5fdc" />
+<img width="1774" height="887" alt="Cybersecurity Home Lab Network Diagram" src="https://github.com/user-attachments/assets/9a4fb913-9b90-497c-963e-f2811213f408" />
+
