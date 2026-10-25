@@ -29,9 +29,10 @@ As of the writing of this module, the latest version of VirtualBox is `7.2.22`.
 pfSense is the gateway (router) and firewall for the lab. pfSense should always be the first VM that is booted when using the lab. If pfSense is not booted the machines in the lab will not be able to access the internet. Once pfSense is up other VMs can be launched.  
 ### Download pfSense
 
-Go to the following link: [pfSense CE Download](https://atxfiles.netgate.com/mirror/downloads/)
-As of writing the latest version of pfSense is `2.7.2`
-Download the `amd64` version `ISO` of the latest version available
+Go to the following link: [pfSense CE Download](https://atxfiles.netgate.com/mirror/downloads/)  
+
+As of writing the latest version of pfSense is `2.7.2`. Download the `amd64` version `ISO` of the latest version available  
+ 
 
 
 
