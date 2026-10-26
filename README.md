@@ -15,6 +15,8 @@ A segmented Cybersecurity Home Lab built on VirtualBox and pfSense/OPNsense, fea
 - Cyber Range (Vulnerable VMs for CTF practice)
 <img width="1774" height="887" alt="Cybersecurity Home Lab Network Diagram" src="https://github.com/user-attachments/assets/9a4fb913-9b90-497c-963e-f2811213f408" />
 
+---
+---
 
 # 1. Installing VirtualBox
 
@@ -219,8 +221,10 @@ In this lab, Kali Linux can be used for:
 - Generating security events to practice detection and monitoring.
 
 **Important:** Perform scanning and security testing only on systems and networks you own or have explicit permission to test.
-<img width="794" height="719" alt="1" src="https://github.com/user-attachments/assets/1334a823-ca89-4901-baf5-61e7873638c4" />
+<img width="794" height="719" alt="1" src="https://github.com/user-attachments/assets/1334a823-ca89-4901-baf5-61e7873638c4" />  
+
 ---  
+---
 
 # 4. Cyber Range Configuration
 
@@ -316,10 +320,163 @@ d. From Kali Linux, test connectivity to Metasploitable 2:
 
 ### Important Notes
 - Replace `<METASPLOITABLE_IP>` and `<CHRONOS_IP>` with the actual IP addresses assigned to the VMs.
-- The article uses `10.6.6.12` for Metasploitable 2 and `10.6.6.11` for Chronos as examples; your addresses may differ.
+- The article uses `10.6.6.11` for Metasploitable 2 and `10.6.6.12` for Chronos as examples; your addresses may differ.
 - Ensure the target VMs are connected to the intended lab network and that DHCP and firewall rules are configured appropriately.
 - Keep vulnerable VMs isolated from untrusted networks and use them only for authorized testing.
 ---  
+---
+
+# 5.Active Directory Lab Setup
+
+## 1. Lab Overview
+
+Build an Active Directory environment using VirtualBox to practice domain administration, authentication, Group Policy, and security monitoring.
+
+### Virtual Machines
+
+| VM | Role | RAM | Disk |
+|---|---|---:|---:|
+| Windows Server 2019 | Domain Controller (DC), AD DS, DNS, DHCP, AD CS | 4 GB | 100 GB |
+| Windows 10 Enterprise - Client 1 | Domain-joined workstation | Default | 100 GB |
+| Windows 10 Enterprise - Client 2 | Domain-joined workstation | Default | 100 GB |
+
+## 2. Network Configuration
+
+Connect all three VMs to the VirtualBox Internal Network corresponding to the `AD_LAB` interface on pfSense.
+
+| Setting | Configuration |
+|---|---|
+| Network | AD_LAB |
+| Subnet | `10.80.80.0/24` |
+| pfSense Gateway | `10.80.80.1` |
+| Domain Controller IP | `10.80.80.2` |
+| Subnet Mask | `255.255.255.0` |
+| Client DNS | `10.80.80.2` |
+| Domain Name | `ad.lab` |
+
+### DHCP Scope
+
+Configure DHCP on the Domain Controller if it will assign addresses to the clients.
+
+- Start IP: `10.80.80.11`
+- End IP: `10.80.80.253`
+- Subnet Mask: `255.255.255.0`
+- Default Gateway: `10.80.80.1`
+- DNS Server: `10.80.80.2`
+
+Ensure that DHCP is enabled on the intended network only and that pfSense firewall rules allow the required traffic.
+
+## 3. Domain Controller Configuration
+
+On Windows Server 2019:
+
+- Configure a static IP address: `10.80.80.2`.
+- Rename the server (for example, `DC1`).
+- Install Active Directory Domain Services (AD DS) and DNS Server.
+- Promote the server to a Domain Controller.
+- Create a new forest named `ad.lab`.
+- Configure the DNS forwarder as `10.80.80.1`.
+- Install and configure DHCP if the Domain Controller will assign client IP addresses.
+- Install Active Directory Certificate Services (AD CS) with the Certificate Authority role.
+
+## 4. Active Directory Users
+
+Open **Active Directory Users and Computers** to create domain accounts.
+
+Create:
+
+- A dedicated domain administrator account and add it to the `Domain Admins` group.
+- Two standard domain user accounts for the client machines.
+
+Use the administrator account for domain administration and the standard accounts for regular client logins.
+
+## 5. Vulnerable AD Configuration (Optional)
+
+For security testing, the reference guide uses a vulnerable AD configuration script and Group Policy changes.
+
+Potential lab configurations include:
+
+- Disabling Windows Defender and Windows Firewall.
+- Enabling remote administration through WinRM.
+- Allowing RDP connections.
+- Changing selected remote administration and RPC policies.
+
+**Security warning:** These settings reduce security. Apply them only in an isolated, controlled lab. Do not use them on production systems or expose the lab directly to the Internet. Review scripts before executing them, and take snapshots before making changes.
+
+## 6. Windows Client Configuration
+
+Repeat the following setup for both Windows 10 Enterprise VMs:
+
+1. Install Windows 10 Enterprise.
+2. Install VirtualBox Guest Additions.
+3. Connect the VM to the `AD_LAB` Internal Network.
+4. Ensure the client receives an IP address from the intended DHCP server.
+5. Set the client's DNS server to `10.80.80.2`.
+6. Rename the client to an identifiable name, such as `CLIENT1` or `CLIENT2`.
+7. Join the `ad.lab` domain using authorized domain credentials.
+8. Restart the client.
+9. Log in using the appropriate domain user account.
+
+## 7. Verification
+
+### Verify IP Configuration
+
+On each Windows client, open PowerShell or Command Prompt:
+
+```powershell
+ipconfig /all
+```
+
+Confirm that the client has an IP address in `10.80.80.0/24`, the correct gateway, and DNS set to `10.80.80.2`.
+
+### Verify Domain Login
+
+Run:
+
+```powershell
+whoami
+```
+
+Confirm that the logged-in account uses the expected domain identity.
+
+### Verify DHCP and DNS
+
+- Open DHCP Manager on the Domain Controller and confirm that client leases exist.
+- Open DNS Manager and confirm that client DNS records have been registered.
+- Confirm that both clients can resolve the `ad.lab` domain.
+
+### Apply Group Policy
+
+If you configured Group Policy, run this command on the relevant Windows machines:
+
+```powershell
+gpupdate /force
+```
+
+## 8. Snapshots and Lab Startup
+
+After confirming that the environment works:
+
+- Power off each VM before taking a clean snapshot.
+- Create snapshots of the Domain Controller and both clients.
+- Keep the Domain Controller running before starting the client VMs.
+- Retain the Windows 10 ISO if it will be used later to build a FlareVM.
+
+## 9. Learning Objectives
+
+This lab provides practice with:
+
+- Active Directory domain administration.
+- User and group management.
+- DNS and DHCP configuration.
+- Domain authentication and domain-joined endpoints.
+- Group Policy management.
+- Certificate Authority fundamentals.
+- Windows security configuration and remote administration.
+- Generating Windows security events for SOC monitoring and detection.
+
+**Lab Result:** One Windows Server 2019 Domain Controller and two Windows clients joined to the `ad.lab` domain, ready for further security monitoring and detection exercises.
+
 
 
 
