@@ -1,11 +1,11 @@
 
-# Soc-Homelab-Setup
+# Enterprise-Style SOC Home Lab
 
-A segmented Cybersecurity Home Lab built on VirtualBox and pfSense/OPNsense, featuring dedicated subnets for Active Directory, SOC monitoring (Splunk), malware analysis (Flare VM & REMnux), forensics (Tsurugi), and vulnerable attack targets.</sub>
+A virtual enterprise security environment featuring segmented networks, Active Directory, Windows endpoints, Splunk SIEM, malware analysis, digital forensics, and vulnerable systems for security monitoring and incident detection.
 
 ---
 
-## <span style="color: red;"> Home Lab Overview</span>
+## Home Lab Overview
 
 - pfSense (Gateway & Firewall)
 - Kali Linux (Management VM)
