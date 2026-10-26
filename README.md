@@ -304,7 +304,8 @@ d. From Kali Linux, test connectivity to Metasploitable 2:
    ```bash
    ping <CHRONOS_IP> -c 5
    ```
-<img width="573" height="233" alt="2" src="https://github.com/user-attachments/assets/d0b0d678-3196-48b7-a683-a36ab4531908" />
+<img width="569" height="232" alt="1" src="https://github.com/user-attachments/assets/073031ac-9ea1-45a5-b2f1-6660b78e4a83" />
+
 
 
 ## 3. Cyber Range Network
