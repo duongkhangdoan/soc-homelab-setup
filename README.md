@@ -299,7 +299,8 @@ d. From Kali Linux, test connectivity to Metasploitable 2:
  Find the IP address assigned to Chronos.
  From Kali Linux, test connectivity:  
  
- <img width="738" height="336" alt="1" src="https://github.com/user-attachments/assets/a533fdf1-d784-46de-8ee5-21ec8d9b3c8e" />
+<img width="1044" height="509" alt="1" src="https://github.com/user-attachments/assets/67f2e897-4cad-4b6a-a252-3e9cbd022709" />
+
 
    ```bash
    ping <CHRONOS_IP> -c 5
