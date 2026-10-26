@@ -41,14 +41,14 @@ The pfSense virtual machine has six network interfaces: one WAN interface and fi
 
 ## Network Interface Configuration
 
-| Interface | Virtual NIC | IPv4 Address | Subnet | Purpose |
-|---|---|---|---|---|---|
-| WAN | `vtnet0` | NAT | `10.0.2.15/24` | `10.0.2.0/24` | External connectivity through VirtualBox NAT |
-| LAN | `vtnet1` | VLAN 0 |`10.0.0.1/24` | `10.0.0.0/24` | Primary LAN and pfSense management |
-| CYBER_RANGE | `vtnet2` | VLAN 1 | `10.6.6.1/24` | `10.6.6.0/24` | Cybersecurity testing and lab exercises |
-| AD_LAB | `vtnet3` | VLAN 2 |`10.80.80.1/24` | `10.80.80.0/24` | Active Directory and Windows client environment |
-| ISOLATED | `vtnet4` | VLAN 3 |`10.99.99.1/24` | `10.99.99.0/24` | Isolated environment for controlled testing |
-| SECURITY | `vtnet5` | VLAN 4 |`10.10.10.1/24` | `10.10.10.0/24` | Security monitoring and defensive security tools |
+| Interface | Virtual NIC | NAT / Mode | VLAN ID | IPv4 Address | Subnet | Purpose |
+| :--- | :--- | :--- | :--- | :--- | :--- | :--- |
+| **WAN** | `vtnet0` | NAT | - | `10.0.2.15/24` | `10.0.2.0/24` | External connectivity through VirtualBox NAT |
+| **LAN** | `vtnet1` | Internal | VLAN 0 | `10.0.0.1/24` | `10.0.0.0/24` | Primary LAN and pfSense management |
+| **CYBER_RANGE** | `vtnet2` | Internal | VLAN 1 | `10.6.6.1/24` | `10.6.6.0/24` | Cybersecurity testing and lab exercises |
+| **AD_LAB** | `vtnet3` | Internal | VLAN 2 | `10.80.80.1/24` | `10.80.80.0/24` | Active Directory and Windows client environment |
+| **ISOLATED** | `vtnet4` | Internal | VLAN 3 | `10.99.99.1/24` | `10.99.99.0/24` | Isolated environment for controlled testing |
+| **SECURITY** | `vtnet5` | Internal | VLAN 4 | `10.10.10.1/24` | `10.10.10.0/24` | Security monitoring and defensive security tools |
 
 ## Interface Descriptions
 
