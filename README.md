@@ -14,7 +14,7 @@ A segmented Cybersecurity Home Lab built on VirtualBox and pfSense/OPNsense, fea
 - Security VMs (DFIR & SIEM)
 - Cyber Range (Vulnerable VMs for CTF practice)
 <img width="1774" height="887" alt="Cybersecurity Home Lab Network Diagram" src="https://github.com/user-attachments/assets/9a4fb913-9b90-497c-963e-f2811213f408" />
---- 
+
 
 # 1. Installing VirtualBox
 
@@ -122,7 +122,7 @@ The six interfaces and their IPv4 addresses are configured and visible in the pf
 ---  
 
 
-#3. Kali Linux Installation Guide
+# 3. Kali Linux Installation Guide
 
 ## a. Download Kali Linux
 
@@ -222,14 +222,14 @@ In this lab, Kali Linux can be used for:
 <img width="794" height="719" alt="1" src="https://github.com/user-attachments/assets/1334a823-ca89-4901-baf5-61e7873638c4" />
 ---  
 
-#4. Cyber Range Configuration
+# 4. Cyber Range Configuration
 
 This section explains how to set up vulnerable virtual machines in VirtualBox for cybersecurity practice.
 
 ## 1. Metasploitable 2
 
 ### Download
-- Download Metasploitable 2 from [VulnHub](https://www.vulnhub.com/).
+- Download Metasploitable 2 from [VulnHub](https://www.vulnhub.com/entry/metasploitable-2,29/).
 - Extract the downloaded `.zip` file.
 - Locate the `.vmdk` virtual disk file.
 
@@ -255,6 +255,7 @@ b. Check the IP address:
    ```bash
    ip a l eth0
    ```
+<img width="992" height="543" alt="1" src="https://github.com/user-attachments/assets/0d9b53bf-b178-4db7-9c24-606598a45801" />
 
 c. Test connectivity from Metasploitable 2:
 
@@ -262,17 +263,20 @@ c. Test connectivity from Metasploitable 2:
    ping google.com -c 5
    ping 10.0.0.2 -c 5
    ```
+<img width="616" height="228" alt="1" src="https://github.com/user-attachments/assets/7d8065f1-0676-4474-ba73-c9955a270c19" />
+
 
 d. From Kali Linux, test connectivity to Metasploitable 2:
 
    ```bash
    ping <METASPLOITABLE_IP> -c 5
    ```
+<img width="568" height="416" alt="2" src="https://github.com/user-attachments/assets/920cb13d-99a5-446f-8f50-32d63cbb02ec" />
 
 ## 2. Chronos
 
 ### Download and Import
- Download Chronos from [VulnHub](https://www.vulnhub.com/).
+ Download Chronos from [VulnHub](https://www.vulnhub.com/entry/chronos-1,735/).
  Open VirtualBox and select **Tools → Import**.
  Select the downloaded `.ova` file.
  Set RAM to **1024 MB** if appropriate for your system.
@@ -294,10 +298,14 @@ d. From Kali Linux, test connectivity to Metasploitable 2:
  Navigate to **Status → DHCP Leases**.
  Find the IP address assigned to Chronos.
  From Kali Linux, test connectivity:
+ <img width="738" height="336" alt="1" src="https://github.com/user-attachments/assets/a533fdf1-d784-46de-8ee5-21ec8d9b3c8e" />
+
 
    ```bash
    ping <CHRONOS_IP> -c 5
    ```
+<img width="573" height="233" alt="2" src="https://github.com/user-attachments/assets/d0b0d678-3196-48b7-a683-a36ab4531908" />
+
 
 ## 3. Cyber Range Network
 
@@ -308,7 +316,7 @@ d. From Kali Linux, test connectivity to Metasploitable 2:
 
 ### Important Notes
 - Replace `<METASPLOITABLE_IP>` and `<CHRONOS_IP>` with the actual IP addresses assigned to the VMs.
-- The article uses `10.6.6.12` for Metasploitable 2 and `10.6.6.13` for Chronos as examples; your addresses may differ.
+- The article uses `10.6.6.12` for Metasploitable 2 and `10.6.6.11` for Chronos as examples; your addresses may differ.
 - Ensure the target VMs are connected to the intended lab network and that DHCP and firewall rules are configured appropriately.
 - Keep vulnerable VMs isolated from untrusted networks and use them only for authorized testing.
 
