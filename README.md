@@ -470,6 +470,7 @@ Confirm that the logged-in account uses the expected domain identity.
 - Open DHCP Manager on the Domain Controller and confirm that client leases exist.
 - Open DNS Manager and confirm that client DNS records have been registered.
 - Confirm that both clients can resolve the `ad.lab` domain.
+<img width="935" height="779" alt="1" src="https://github.com/user-attachments/assets/a2d6d3c1-3b1c-4df7-8536-121c555edc7b" />
 
 ### Apply Group Policy
 
@@ -569,7 +570,11 @@ This lab provides practice with:
 - Windows security configuration and remote administration.
 - Generating Windows security events for SOC monitoring and detection.
 
-**Lab Result:** One Windows Server 2019 Domain Controller and two Windows clients joined to the `ad.lab` domain, ready for further security monitoring and detection exercises.
+**Lab Result:** One Windows Server 2019 Domain Controller and two Windows clients joined to the `ad.lab` domain, ready for further security monitoring and detection exercises.   
+---
+---
+
+# 6. 
 
 
 
