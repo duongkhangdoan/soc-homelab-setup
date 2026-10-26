@@ -297,16 +297,14 @@ d. From Kali Linux, test connectivity to Metasploitable 2:
  Open the pfSense web portal from Kali Linux.
  Navigate to **Status → DHCP Leases**.
  Find the IP address assigned to Chronos.
- From Kali Linux, test connectivity:
+ From Kali Linux, test connectivity:  
+ 
  <img width="738" height="336" alt="1" src="https://github.com/user-attachments/assets/a533fdf1-d784-46de-8ee5-21ec8d9b3c8e" />
-
 
    ```bash
    ping <CHRONOS_IP> -c 5
    ```
 <img width="569" height="232" alt="1" src="https://github.com/user-attachments/assets/073031ac-9ea1-45a5-b2f1-6660b78e4a83" />
-
-
 
 ## 3. Cyber Range Network
 
@@ -320,6 +318,8 @@ d. From Kali Linux, test connectivity to Metasploitable 2:
 - The article uses `10.6.6.12` for Metasploitable 2 and `10.6.6.11` for Chronos as examples; your addresses may differ.
 - Ensure the target VMs are connected to the intended lab network and that DHCP and firewall rules are configured appropriately.
 - Keep vulnerable VMs isolated from untrusted networks and use them only for authorized testing.
+---  
+
 
 
 
