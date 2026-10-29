@@ -23,7 +23,8 @@ Key components include:
 
 The lab uses pfSense to route and control traffic between separate VirtualBox networks. Firewall rules determine which systems and subnets can communicate.
 
-<img width="1774" height="887" alt="Cybersecurity Home Lab Network Diagram" src="https://github.com/user-attachments/assets/119bedda-fdc3-4d48-b14f-902aff39058e" />
+<img width="1774" height="887" alt="Neon Cybersecurity Home Lab Network" src="https://github.com/user-attachments/assets/32f6c372-271c-4901-b2e8-c6e21aecc7ab" />
+
 
 
 ### Network Segmentation
@@ -62,11 +63,11 @@ Kali Linux is used for authorized reconnaissance and security testing against in
 
 ### 3. Active Directory Lab — AD_LAB
 
-**Technologies:** Windows Server 2019, Windows 10 Enterprise, Active Directory Domain Services, DNS
+**Technologies:** Windows Server 2022, Windows 10 Enterprise, Active Directory Domain Services, DNS
 
 | System | IP Address | Role |
 |---|---|---|
-| Windows Server 2019 | `10.80.80.2` | Domain Controller |
+| Windows Server 2022 | `10.80.80.2` | Domain Controller |
 | Windows 10 Client 1 | `10.80.80.11` | Domain client |
 | Windows 10 Client 2 | `10.80.80.12` | Domain client |
 
