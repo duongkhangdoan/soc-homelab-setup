@@ -5,7 +5,7 @@
 Build an Active Directory environment using VirtualBox to practice domain administration, authentication, Group Policy, and security monitoring.
 
 ### Virtual Machines
-Go to the following URL:[Windows Server 2019 | Microsoft Evaluation Center](https://www.microsoft.com/en-us/evalcenter/download-windows-server-2022?msockid=14e0f61eb4bf64860e83e1f0b5fc65aa)  
+Go to the following URL:[Windows Server 2022 | Microsoft Evaluation Center](https://www.microsoft.com/en-us/evalcenter/download-windows-server-2022?msockid=14e0f61eb4bf64860e83e1f0b5fc65aa)  
 
 Go to the following URL:[Windows 10 Enterprise | Microsoft Evaluation Center](https://archive.org/details/Windows10EnterpriseLTSC202164Bit)
 
