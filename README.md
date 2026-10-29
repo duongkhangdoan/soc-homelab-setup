@@ -23,8 +23,7 @@ Key components include:
 
 The lab uses pfSense to route and control traffic between separate VirtualBox networks. Firewall rules determine which systems and subnets can communicate.
 
-<img width="1774" height="887" alt="Neon Cybersecurity Home Lab Network" src="https://github.com/user-attachments/assets/32f6c372-271c-4901-b2e8-c6e21aecc7ab" />
-
+<img width="1774" height="887" alt="Neon Cybersecurity Home Lab Network (1)" src="https://github.com/user-attachments/assets/93721baa-74da-4303-922d-6685f3924dbe" />
 
 
 ### Network Segmentation
