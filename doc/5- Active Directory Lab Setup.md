@@ -49,7 +49,7 @@ Ensure that DHCP is enabled on the intended network only and that pfSense firewa
 
 ## 3. Domain Controller Configuration
 
-On Windows Server 2019:
+On Windows Server 2022:
 
 - Configure a static IP address: `10.80.80.2`.
 - Rename the server (for example, `DC1`).
